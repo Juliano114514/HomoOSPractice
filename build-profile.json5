@@ -71,6 +71,10 @@
     {
       "name": "chapters",
       "srcPath": "./chapters",
+    },
+    {
+      "name": "feature_music",
+      "srcPath": "./feature_music",
     }
   ]
 }

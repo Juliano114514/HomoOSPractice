@@ -1,1 +1,1 @@
-export { MainPage } from './src/main/ets/components/MainPage';
+export { VideoScreen } from './src/main/ets/components/VideoPage';

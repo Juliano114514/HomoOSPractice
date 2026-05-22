@@ -5,6 +5,13 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {}
+  "dependencies": {
+    "core": "file:../core",
+    "feature_feed": "file:../feature_feed",
+    "feature_video": "file:../feature_video",
+    "feature_profile": "file:../feature_profile",
+    "feature_music": "file:../feature_music",
+    "chapters": "file:../chapters"
+  }
 }
 

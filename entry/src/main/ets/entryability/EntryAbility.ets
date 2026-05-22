@@ -1,5 +1,5 @@
 import { AbilityConstant, UIAbility, Want } from "@kit.AbilityKit";
-import { Log } from "../common/Logger";
+import { Log } from "core";
 import window from "@ohos.window";
 
 

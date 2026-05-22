@@ -1,14 +1,10 @@
-import { Log } from '../common/Logger';
-import { RouterManager } from '../core/router/RouterManager';
-
-
-// Mock 业务组件
-@Component struct FeedScreen { build() { Column() { Text('Feed 瀑布流').fontSize(30) }.width('100%').height('100%').justifyContent(FlexAlign.Center) } }
-@Component struct VideoScreen { build() { Column() { Text('多媒体视频').fontSize(30) }.width('100%').height('100%').justifyContent(FlexAlign.Center) } }
-@Component struct MusicScreen { build() { Column() { Text('音乐播放引擎').fontSize(30) }.width('100%').height('100%').justifyContent(FlexAlign.Center) } }
-@Component struct UserScreen { build() { Column() { Text('用户中心').fontSize(30) }.width('100%').height('100%').justifyContent(FlexAlign.Center) } }
-@Component struct CourseChapterScreen { build() { Column() { Text('课程与靶场').fontSize(30) }.width('100%').height('100%').justifyContent(FlexAlign.Center) } }
-
+import { Log } from 'core';
+import { RouterManager } from 'core';
+import { FeedScreen } from 'feature_feed';
+import { VideoScreen } from 'feature_video';
+import { ProfileScreen } from 'feature_profile';
+import { MusicScreen } from 'feature_music'
+import { ChapterScreen } from 'chapters'
 
 @Entry
 @Component
@@ -17,7 +13,8 @@ struct Index {
   @State currentIndex: number = 0
 
   // 自定义 TabBar
-  @Builder tabBuilder(title: string, targetIndex: number, iconStr: string) {
+  @Builder
+  tabBuilder(title: string, targetIndex: number, iconStr: string) {
     Column() {
       Text(iconStr)
         .fontSize(24)
@@ -42,8 +39,8 @@ struct Index {
         TabContent() { FeedScreen() }.tabBar(this.tabBuilder('首页', 0, '🏠'))
         TabContent() { VideoScreen() }.tabBar(this.tabBuilder('视频', 1, '🎬'))
         TabContent() { MusicScreen() }.tabBar(this.tabBuilder('音乐', 2, '🎵'))
-        TabContent() { UserScreen() }.tabBar(this.tabBuilder('我的', 3, '👤'))
-        TabContent() { CourseChapterScreen() }.tabBar(this.tabBuilder('课程', 4, '📚'))
+        TabContent() { ProfileScreen() }.tabBar(this.tabBuilder('我的', 3, '👤'))
+        TabContent() { ChapterScreen() }.tabBar(this.tabBuilder('课程', 4, '📚'))
       }
       .onChange((index: number) => {
         this.currentIndex = index;
@@ -53,6 +50,8 @@ struct Index {
     .hideTitleBar(true)         // 隐藏系统默认标题栏，方便全面自定义UI
     .navDestination(this.pageMap) // 绑定全局路由映射表
   }
+
+
   // 统一路由分发图：在此处通过名称匹配并渲染对应的目标页面
   @Builder pageMap(name: string, param: Object) {
     if (name === 'VideoDetail') {
