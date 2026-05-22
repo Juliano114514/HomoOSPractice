@@ -17,10 +17,25 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
+      }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\liangjiayin\\.ohos\\config\\default_HomoOSPractice_bi2wTsHjdsx_n89qvlKb0oHVKCffNxpF3hUsoDmiIn8=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A0E2FDD21F6AC79163352FE2D2F8E6455B4D7049C61A2D34D3D6743D042696DF89E33F613F94C",
+          "profile": "C:\\Users\\liangjiayin\\.ohos\\config\\default_HomoOSPractice_bi2wTsHjdsx_n89qvlKb0oHVKCffNxpF3hUsoDmiIn8=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\liangjiayin\\.ohos\\config\\default_HomoOSPractice_bi2wTsHjdsx_n89qvlKb0oHVKCffNxpF3hUsoDmiIn8=.p12",
+          "storePassword": "0000001ACECC01B08578746634C0FAB73DF2460C71181BABAA396D48CF7918BEB223D9A7071129C1A9A1"
+        }
       }
     ]
   },
@@ -36,6 +51,26 @@
           ]
         }
       ]
+    },
+    {
+      "name": "core",
+      "srcPath": "./core",
+    },
+    {
+      "name": "feature_feed",
+      "srcPath": "./feature_feed",
+    },
+    {
+      "name": "feature_video",
+      "srcPath": "./feature_video",
+    },
+    {
+      "name": "feature_profile",
+      "srcPath": "./feature_profile",
+    },
+    {
+      "name": "chapters",
+      "srcPath": "./chapters",
     }
   ]
 }
