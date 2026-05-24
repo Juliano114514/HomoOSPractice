@@ -3,7 +3,7 @@ import { RouterManager } from 'core';
 import { FeedScreen } from 'feature_feed';
 import { VideoScreen } from 'feature_video';
 import { ProfileScreen } from 'feature_profile';
-import { MusicScreen } from 'feature_music'
+import { MusicScreen, MusicPlayerScreen } from 'feature_music';
 import { ChapterScreen } from 'chapters'
 
 @Entry
@@ -58,6 +58,8 @@ struct Index {
       // 等待后续开发：VideoDetailScreen({ videoId: param as string })
     } else if (name === 'LessonConcurrency') {
       // 等待后续开发：LessonConcurrencyScreen()
+    } else if (name === 'MusicPlayer') {     // ====== 新增音乐播放页路由分发 ======
+      MusicPlayerScreen()
     }
   }
 }
