@@ -79,6 +79,10 @@
     {
       "name": "feature_memo",
       "srcPath": "./feature_memo",
+    },
+    {
+      "name": "feature_rank",
+      "srcPath": "./feature_rank",
     }
   ]
 }

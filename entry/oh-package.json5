@@ -12,6 +12,7 @@
     "feature_profile": "file:../feature_profile",
     "feature_music": "file:../feature_music",
     "feature_memo": "file:../feature_memo",
+    "feature_rank": "file:../feature_rank",
     "chapters": "file:../chapters"
   }
 }

@@ -6,6 +6,7 @@ import { ProfileScreen } from 'feature_profile';
 import { MusicScreen, MusicPlayerScreen } from 'feature_music';
 import { MemoScreen } from 'feature_memo';
 import { ChapterScreen } from 'chapters'
+import { RankScreen } from 'feature_rank';
 
 @Entry
 @Component
@@ -43,6 +44,7 @@ struct Index {
         TabContent() { ProfileScreen() }.tabBar(this.tabBuilder('我的', 3, '👤'))
         TabContent() { ChapterScreen() }.tabBar(this.tabBuilder('课程', 4, '📚'))
         TabContent() { MemoScreen() }.tabBar(this.tabBuilder('待办', 5, '📝'))
+        TabContent() { RankScreen() }.tabBar(this.tabBuilder('排行', 6,'📈'))
       }
       .onChange((index: number) => {
         this.currentIndex = index;
