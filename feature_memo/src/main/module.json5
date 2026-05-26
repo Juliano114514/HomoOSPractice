@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "feature_memo",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}

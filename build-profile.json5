@@ -75,6 +75,10 @@
     {
       "name": "feature_music",
       "srcPath": "./feature_music",
+    },
+    {
+      "name": "feature_memo",
+      "srcPath": "./feature_memo",
     }
   ]
 }

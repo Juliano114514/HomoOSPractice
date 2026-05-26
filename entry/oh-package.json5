@@ -11,6 +11,7 @@
     "feature_video": "file:../feature_video",
     "feature_profile": "file:../feature_profile",
     "feature_music": "file:../feature_music",
+    "feature_memo": "file:../feature_memo",
     "chapters": "file:../chapters"
   }
 }

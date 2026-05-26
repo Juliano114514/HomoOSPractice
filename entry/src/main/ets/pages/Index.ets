@@ -4,6 +4,7 @@ import { FeedScreen } from 'feature_feed';
 import { VideoScreen } from 'feature_video';
 import { ProfileScreen } from 'feature_profile';
 import { MusicScreen, MusicPlayerScreen } from 'feature_music';
+import { MemoScreen } from 'feature_memo';
 import { ChapterScreen } from 'chapters'
 
 @Entry
@@ -41,6 +42,7 @@ struct Index {
         TabContent() { MusicScreen() }.tabBar(this.tabBuilder('音乐', 2, '🎵'))
         TabContent() { ProfileScreen() }.tabBar(this.tabBuilder('我的', 3, '👤'))
         TabContent() { ChapterScreen() }.tabBar(this.tabBuilder('课程', 4, '📚'))
+        TabContent() { MemoScreen() }.tabBar(this.tabBuilder('待办', 5, '📝'))
       }
       .onChange((index: number) => {
         this.currentIndex = index;
