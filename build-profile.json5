@@ -83,6 +83,10 @@
     {
       "name": "feature_rank",
       "srcPath": "./feature_rank",
+    },
+    {
+      "name": "feature_weather",
+      "srcPath": "./feature_weather",
     }
   ]
 }
