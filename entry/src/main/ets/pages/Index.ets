@@ -7,12 +7,37 @@ import { MusicScreen, MusicPlayerScreen } from 'feature_music';
 import { MemoScreen } from 'feature_memo';
 import { ChapterScreen } from 'chapters'
 import { RankScreen } from 'feature_rank';
+import window from '@ohos.window';
 
 @Entry
 @Component
 struct Index {
   @Provide('pageInfos') pageInfos: NavPathStack = RouterManager.getInstance().getStack()
   @State currentIndex: number = 0
+  @State isKeyboardVisible: boolean = false
+  private mainWindow: window.Window | null = null
+  private keyboardHeightListener: ((height: number) => void) | null = null
+
+  aboutToAppear(): void {
+    const windowStage = AppStorage.get('windowStage') as window.WindowStage | undefined;
+    if (!windowStage) {
+      return;
+    }
+    this.mainWindow = windowStage.getMainWindowSync();
+    this.keyboardHeightListener = (height: number) => {
+      this.isKeyboardVisible = height > 0;
+    };
+    this.mainWindow.on('keyboardHeightChange', this.keyboardHeightListener);
+  }
+
+  aboutToDisappear(): void {
+    if (this.mainWindow && this.keyboardHeightListener) {
+      this.mainWindow.off('keyboardHeightChange', this.keyboardHeightListener);
+    }
+    this.keyboardHeightListener = null;
+    this.mainWindow = null;
+    this.isKeyboardVisible = false;
+  }
 
   // 自定义 TabBar
   @Builder
@@ -46,6 +71,8 @@ struct Index {
         TabContent() { MemoScreen() }.tabBar(this.tabBuilder('待办', 5, '📝'))
         TabContent() { RankScreen() }.tabBar(this.tabBuilder('排行', 6,'📈'))
       }
+      .barHeight(this.isKeyboardVisible ? 0 : -1)
+      .barWidth(this.isKeyboardVisible ? 0 : -1)
       .onChange((index: number) => {
         this.currentIndex = index;
       })
